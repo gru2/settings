@@ -8,6 +8,7 @@ import string
 
 pyFileTemplate = """\"\"\" $className$ \"\"\"
 
+
 class $className$:
 
     def __init__(self):
@@ -20,6 +21,7 @@ testFileTemplate = """#!/usr/bin/env python2
 
 import $className$
 import unittest
+
 
 class $className$Test(unittest.TestCase):
 
