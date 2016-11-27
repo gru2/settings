@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+
+import os
+
+xinputOutput = os.popen('xinput').read()
+for line in xinputOutput.split('\n'):
+	if "PS/2 Logitech Wheel Mouse" in line:
+		n = int((line.split('=')[1]).split('\t')[0])
+		print line
+
+print "n = " + str(n)
+cmd = "xinput set-prop " + str(n) + " \"Device Enabled\" 0"
+print cmd
+os.system(cmd)
+print "Touchpad disabled."
+
